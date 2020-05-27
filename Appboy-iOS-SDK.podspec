@@ -1,11 +1,11 @@
 Pod::Spec.new do |s|
   s.name         = "Appboy-iOS-SDK"
-  s.version      = "3.23.0"
+  s.version      = "3.23.0-tvlk"
   s.summary      = "This is the Braze iOS SDK for Mobile Marketing Automation"
   s.homepage     = "http://www.braze.com"
   s.license      = { :type => 'Commercial', :text => 'Please refer to https://github.com/Appboy/appboy-ios-sdk/blob/master/LICENSE'}
   s.author       = { "Appboy" => "http://www.braze.com" }
-  s.source       = { :git => 'https://github.com/Appboy/appboy-ios-sdk.git', :tag => s.version.to_s}
+  s.source       = { :git => 'https://github.com/traveloka/appboy-ios-sdk.git', :tag => s.version.to_s}
   s.platform = :ios
   s.ios.deployment_target = '9.0'
   s.requires_arc = true
@@ -33,21 +33,21 @@ Pod::Spec.new do |s|
 
   s.subspec 'NewsFeed' do |snf|
     snf.source_files = 'AppboyUI/ABKNewsFeed/*.*', 'AppboyUI/ABKNewsFeed/ViewControllers/**/*.*', 'AppboyUI/ABKUIUtils/**/*.*', 'AppboyKit/ABKSDWebImageProxy.m'
-    snf.resource = 'AppboyUI/ABKNewsFeed/Resources/**/*.*'
+    snf.resource = 'AppboyUI/ABKNewsFeed/Resources/**/*.{xib,storyboard,strings,lproj,png}'
     snf.dependency 'Appboy-iOS-SDK/Core'
     snf.dependency 'SDWebImage', '~>5.0'
   end
 
   s.subspec 'InAppMessage' do |siam|
     siam.source_files = 'AppboyUI/ABKUIUtils/**/*.*', 'AppboyUI/ABKInAppMessage/*.*', 'AppboyUI/ABKInAppMessage/ViewControllers/*.*', 'AppboyKit/ABKSDWebImageProxy.m'
-    siam.resource = 'AppboyUI/ABKInAppMessage/Resources/*.*'
+    siam.resource = 'AppboyUI/ABKInAppMessage/Resources/*.{xib,png,otf}'
     siam.dependency 'Appboy-iOS-SDK/Core'
     siam.dependency 'SDWebImage', '~>5.0'
   end
 
   s.subspec 'ContentCards' do |scc|
     scc.source_files = 'AppboyUI/ABKContentCards/*.*', 'AppboyUI/ABKContentCards/ViewControllers/**/*.*', 'AppboyUI/ABKUIUtils/**/*.*', 'AppboyKit/ABKSDWebImageProxy.m'
-    scc.resource = 'AppboyUI/ABKContentCards/Resources/**/*.*'
+    scc.resource = 'AppboyUI/ABKContentCards/Resources/**/*.{xib,storyboard,strings,lproj,png}'
     scc.dependency 'Appboy-iOS-SDK/Core'
     scc.dependency 'SDWebImage', '~>5.0'
   end
